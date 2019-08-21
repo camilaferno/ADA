@@ -31,3 +31,23 @@ In general, the time taken by an algorithm grows with the size of the input, so 
 - Graph: Two numbers, vertices and edges.
 2. Running time: Number of primitive operations or “steps” executed.
 Each step takes a constant time to do.
+![](https://github.com/camilaferno/ADA/blob/master/Libros/images/Cormen2_3.png)
+The running time of the algorithm is the sum of running times for each statement executed; a statement that takes c<sub>i</sub> steps to execute and executes n times will contribute c<sub>i</sub>n to the total running time.
+
+Running time of insertion sort:
+![](https://github.com/camilaferno/ADA/blob/master/Libros/images/Cormen2_4.png)
+
+Best case:
+
+If the array is already sorted then the line 5 in the statement A[i] <span>&#8804;</span> *key* detects it.
+![](https://github.com/camilaferno/ADA/blob/master/Libros/images/Cormen2_5.png)
+It can also be seen as a*n*+b also known as a **linear function** of n.
+
+Worst case:
+
+Worst case is that we must compare each element A[j] with each element in the entire sorted subarray A[1..j]􏰀,and so t<sub>j</sub> = j
+![](https://github.com/camilaferno/ADA/blob/master/Libros/images/Cormen2_6.png)
+![](https://github.com/camilaferno/ADA/blob/master/Libros/images/Cormen2_7.png)
+It can also be seen as a*n<sup>2</sup>* + b*n* + c also known as a **quadratic function** of n.
+
+
