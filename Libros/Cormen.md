@@ -25,29 +25,43 @@ Proof that the algorithm is correct
 Analyzing algorithms for this book means measuring the computational time. This book measures it by the RAM model in which none of the instructions are executed concurrently.
 ### Analysis of Insertion Sort
 In general, the time taken by an algorithm grows with the size of the input, so it is traditional to describe the running time of a program as a function of the size of its input. To do so, we need to define the terms “running time” and “size of input”.
-1. Size of input: Depends on the problem being studied
+#### 1. Size of input: Depends on the problem being studied
 - **Sorting: Number of elements in array**
 - Multiplying two integers: Total number of bits needed to represent the number in binary.
 - Graph: Two numbers, vertices and edges.
-2. Running time: Number of primitive operations or “steps” executed.
+#### 2. Running time: Number of primitive operations or “steps” executed.
 Each step takes a constant time to do.
 ![](https://github.com/camilaferno/ADA/blob/master/Libros/images/Cormen2_3.png)
 The running time of the algorithm is the sum of running times for each statement executed; a statement that takes c<sub>i</sub> steps to execute and executes n times will contribute c<sub>i</sub>n to the total running time.
 
-Running time of insertion sort:
+##### Running time of insertion sort:
 ![](https://github.com/camilaferno/ADA/blob/master/Libros/images/Cormen2_4.png)
 
-Best case:
+##### Best case:
 
 If the array is already sorted then the line 5 in the statement A[i] <span>&#8804;</span> *key* detects it.
 ![](https://github.com/camilaferno/ADA/blob/master/Libros/images/Cormen2_5.png)
 It can also be seen as a*n*+b also known as a **linear function** of n.
 
-Worst case:
+##### Worst case:
 
-Worst case is that we must compare each element A[j] with each element in the entire sorted subarray A[1..j]􏰀,and so t<sub>j</sub> = j
+Worst case is that we must compare each element A[j] with each element in the entire sorted subarray A[1..j]􏰀,and so t<sub>j</sub>=j
 ![](https://github.com/camilaferno/ADA/blob/master/Libros/images/Cormen2_6.png)
 ![](https://github.com/camilaferno/ADA/blob/master/Libros/images/Cormen2_7.png)
 It can also be seen as a*n<sup>2</sup>* + b*n* + c also known as a **quadratic function** of n.
+
+## 2.3 Designing Algorithms
+### 2.3.1 Divide and Conquer Approach
+Recursive algorithms usually follow the divide and conquer approach.
+
+Three steps at each level of recursion:
+1. **Divide** the problem in smaller subproblems
+2. **Conquer** the subproblems by solving them recursively.
+3. **Combine** the solutions to the subproblems into the solution for the original problem.
+
+#### Example: **Merge Sort**
+1. **Divide** Divide the n-element sequence to be sorted into two subsequences of n=2 elements each.
+2. **Conquer** Sort the two subsequences recursively using merge sort.
+3. **Combine** Merge the two sorted subsequences to produce the sorted answer.
 
 
